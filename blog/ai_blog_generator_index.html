@@ -1,0 +1,97 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI SEO Blog Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f8f9fa; max-width: 900px; margin: auto; }
+    h1 { color: #222; }
+    select, button { padding: 10px; margin-top: 10px; width: 100%; font-size: 1rem; }
+    .output { background: #fff; padding: 20px; border-radius: 8px; margin-top: 20px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+    .cta a { display: inline-block; margin-top: 15px; background: #28a745; color: white; padding: 10px 15px; border-radius: 5px; text-decoration: none; }
+  </style>
+</head>
+<body>
+  <h1>🧠 AI SEO Blog Generator</h1>
+  <label for="productSelect">Choose a Product:</label>
+  <select id="productSelect">
+    <option value="collagenius">Collagenius</option>
+    <option value="javaburn">Java Burn</option>
+    <option value="glucotrust">GlucoTrust</option>
+    <option value="prostavive">Prostavive</option>
+    <option value="cognicare">Cognicare</option>
+  </select>
+  <button onclick="generateBlog()">Generate Blog</button>
+
+  <div class="output" id="blogOutput"></div>
+
+  <script>
+    const data = {
+      collagenius: {
+        title: "How Collagenius Is Unlocking Brain Power in Busy Adults",
+        intro: "If you're feeling mentally foggy or forgetful, you're not alone. Collagenius by Nootopia is rapidly gaining attention for helping high-performers reclaim focus, energy, and deep work states — thanks to its unique mushroom + collagen blend.",
+        benefits: [
+          "Supports sharper memory and faster recall",
+          "Boosts cognitive stamina without caffeine crashes",
+          "Combines lion’s mane, chaga, and collagen peptides for optimal brain health"
+        ],
+        cta: "https://checoalex101.github.io/faceless-system/collagenius/"
+      },
+      javaburn: {
+        title: "The Coffee Add-On That’s Quietly Helping Burn Fat",
+        intro: "Imagine sipping your morning coffee and igniting your metabolism at the same time. Java Burn blends naturally into your daily routine, supporting weight loss and energy without any change to diet or lifestyle.",
+        benefits: [
+          "Enhances metabolic rate while you drink coffee",
+          "Works with your body’s natural fat-burning rhythm",
+          "Tasteless powder — just mix into your morning brew"
+        ],
+        cta: "https://checoalex101.github.io/faceless-system/javaburn/"
+      },
+      glucotrust: {
+        title: "Can This Bedtime Habit Help Balance Blood Sugar?",
+        intro: "GlucoTrust has become a go-to solution for people struggling with erratic blood sugar levels — all thanks to a mineral-rich formula taken before bed that helps support insulin and glucose control overnight.",
+        benefits: [
+          "Supports healthy blood sugar and insulin sensitivity",
+          "Promotes restful sleep and overnight metabolic repair",
+          "Includes Gymnema, zinc, chromium and more"
+        ],
+        cta: "https://checoalex101.github.io/faceless-system/glucotrust/"
+      },
+      prostavive: {
+        title: "The Himalayan Root Helping Men Reclaim Prostate Health",
+        intro: "Prostavive has captured attention for its blend of herbs and minerals shown to support a healthier prostate and fewer nighttime bathroom trips — all without risky meds or surgeries.",
+        benefits: [
+          "Reduces frequency of nighttime urination",
+          "Supports urinary flow and prostate size",
+          "Includes Himalayan ingredients and saw palmetto"
+        ],
+        cta: "https://checoalex101.github.io/faceless-system/prostavive/"
+      },
+      cognicare: {
+        title: "This Village-Discovered Formula May Reverse Memory Decline",
+        intro: "Cognicare’s natural blend is modeled on neuroprotective compounds discovered in the Amazon. It’s now being used by adults over 50 to slow or reverse early signs of memory loss.",
+        benefits: [
+          "Promotes clearer thinking and memory recall",
+          "Combats age-related cognitive decline",
+          "Features rare neuroprotective botanicals"
+        ],
+        cta: "https://checoalex101.github.io/faceless-system/cognicare/"
+      }
+    };
+
+    function generateBlog() {
+      const choice = document.getElementById("productSelect").value;
+      const content = data[choice];
+      let html = `<h2>${content.title}</h2>`;
+      html += `<p>${content.intro}</p>`;
+      html += `<ul>`;
+      content.benefits.forEach(b => html += `<li>${b}</li>`);
+      html += `</ul>`;
+      html += `<div class="cta"><a href="${content.cta}" target="_blank">Learn More →</a></div>`;
+      document.getElementById("blogOutput").innerHTML = html;
+    }
+  </script>
+</body>
+</html>
