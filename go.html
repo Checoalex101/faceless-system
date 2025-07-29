@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Redirecting...</title>
+  <script>
+    // Rotate evenly between 5 cloaked affiliate links
+    const urls = [
+      "https://hop.clickbank.net/?affiliate=checoalex&vendor=nootopia&w=collagenius",
+      "https://hop.clickbank.net/?vendor=javaburn&affiliate=checoalex&lid=1",
+      "https://hop.clickbank.net/?affiliate=checoalex&vendor=provive&pid=20&tid=track",
+      "https://hop.clickbank.net/?affiliate=checoalex101&vendor=glucotrust&pid=11",
+      "https://hop.clickbank.net/?affiliate=checoalex&vendor=cognicare&pid=pre1"
+    ];
+    const selected = urls[Math.floor(Math.random() * urls.length)];
+    setTimeout(() => {
+      window.location.href = selected;
+    }, 1500); // Delay for cloaking
+  </script>
+</head>
+<body>
+  <p style="text-align: center; margin-top: 40px;">Redirecting you to a secure offer page...</p>
+</body>
+</html>
